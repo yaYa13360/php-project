@@ -15,22 +15,22 @@
         }
         .navbar-brand{
             font-size: 40px;
-            color: #878a8d;
-        }
-        .navbar-brand:link,.navbar-brand:visited,.navbar-brand:hover{
-            color:#878a8d;
         }
         .userImgBox{
             padding-right:20px;
             padding-top:5px;
         }
+        .userImg{
+            border:2px rgba(187, 187, 187, 0.65) solid;
+            height:40px;
+        }
+        .userImg:hover{
+            border:2px rgba(131, 131, 131, 0.65) solid;
+        }
         body{
             padding-top:60px;
         }
     </style>
-    <script>
-
-    </script>
 </head>
 <body>
     <nav class="nav navbar-default navbar-fixed-top navbar-style">
@@ -43,7 +43,7 @@
                     <li><a href="#"><span class="glyphicon glyphicon-log-in nav-right-style"></span> LOG_OUT</a></li>
                     <li>
                         <div class="userImgBox">
-                            <img src="../src/Tako.png" style="border:2px rgba(187, 187, 187, 0.65) solid;height:40px"></li>
+                            <img src="../src/Tako.png" class="userImg"></li>
                         </div>
                 </ul>
             </div>
@@ -52,3 +52,6 @@
     </nav>
     <!--網頁內容-->
 </body>
+<script>
+    
+</script>
