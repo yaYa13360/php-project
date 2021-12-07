@@ -2,52 +2,44 @@
     <title>PPY WEB</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <style>
-        .container-fluid{
-            padding-top: 5px;
-            padding-bottom: 5px;
+        .containerStyle{
+            margin-left: 10px;
+            margin-right: 10px;
         }
         .navbar-style{
+            background-color: white;
             box-shadow: 0 0 5px 0 #878a8d;
         }
         .navbar-brand{
-            font-size: 40px;
+            font-size: 30px;
         }
         .userImgBox{
-            padding-right:20px;
-            padding-top:5px;
+            height: 40px;
+            width: 40px;
         }
         .userImg{
             border:2px rgba(187, 187, 187, 0.65) solid;
-            height:40px;
+            height: 100%;
+            width: 100%;
         }
-        .userImg:hover{
-            border:2px rgba(131, 131, 131, 0.65) solid;
-        }
-        body{
-            padding-top:60px;
-        }
+        
     </style>
 </head>
 <body>
-    <nav class="nav navbar-default navbar-fixed-top navbar-style">
-        <div class="container-fluid"  style="padding: 5px;">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="main.html">PPY WEB</a>
-            </div>
+    <nav class="navbar sticky-top bg-light navbar-light navbar-expand-sm navbar-style">
+        <div class="container-fluid containerStyle">
+            <a class="navbar-brand" href="main.html">PPY WEB</a>
             <div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in nav-right-style"></span> LOG_OUT</a></li>
-                    <li>
-                        <div class="userImgBox">
-                            <img src="../src/Tako.png" class="userImg"></li>
-                        </div>
+                <ul class="navbar-nav">
+                    <li class="navbar-item"><a class="nav-link" href="#">LOG_OUT</a></li>
+                    <li class="navbar-item"><div class="userImgBox"><a href="#"><img src="../src/Tako.png" class="userImg"></a></div></li>
                 </ul>
             </div>
-            
         </div>
     </nav>
     <!--網頁內容-->
