@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+  	<meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
+  </head>
+  <style>
+    html, body {
+        height: 100%; 
+		background:gray;
+    }
+	.swiper-container{
+		width: 1000px;
+		margin: 50px auto;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+        box-sizing: border-box;
+	  
+	}
+	.swiper-item{
+		object-fit: contain;
+		width: fix;
+		height: fix;
+    }
+  </style>
+  <body>
+
+  <div class="swiper-container">
+            <img class="swiper-item" src="../src/bird1.jpg">
+            <img class="swiper-item" src="../src/bird2.jpg">
+            <img class="swiper-item" src="../src/bird3.jpg">
+  </div>
+
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <script>
+$('.swiper-container').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  dots:true
+});
+  </script>
+
+  </body>
+</html>
