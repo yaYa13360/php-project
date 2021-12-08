@@ -1,123 +1,132 @@
-<head>
-    <title>PPY WEB</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <style>
-        .containerStyle{
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-        .navbar-style{
-            background-color: white;
-            box-shadow: 0 0 5px 0 #878a8d;
-        }
-        .navbar-brand{
-            font-size: 30px;
-        }
-        .userImgBox{
-            height: 40px;
-            width: 40px;
-        }
-        .userImg{
-            border:2px rgba(187, 187, 187, 0.65) solid;
-            height: 100%;
-            width: 100%;
-        }
-        .userImg:hover{
-            border:2px rgba(131, 131, 131, 0.65) solid;
-        }
-        .appName{
-            font-size: 50px;
-            font-style: italic;
-            border-bottom: 3px #878a8dc7 solid;
-        }
-        .createrName{
-            font-size: 25px;
-            color:rgb(175, 175, 175);
-            border-bottom: 3px #c9c9c9c7 solid;
-            padding-top: 15px;
-        }
-        .UperArea{
-            position: relative;
-            margin-bottom: 25px;
-            margin-top: 25px;
-            height: 200px;
-        }
-        .UperLeftArea{
-            /* background-color: rgb(202, 230, 139); */
-            position: absolute;
-            bottom: 0px;
-        }
-        .iconArea{
-            /* background-color: rgb(230, 209, 139); */
-            position: absolute;
-            right: 0px;
-        }
-        .iconImg{
-            height: 100%;
-        }
-        .LowerArea{
-            /* background-color: aliceblue; */
-            height: 100px;
-        }
-        .LowerLeftArea{
-            background-color: rgb(246, 240, 255);
-        }
-        .LowerRightArea{
-            background-color: rgb(255, 237, 225);
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar sticky-top bg-light navbar-light navbar-expand-sm navbar-style">
-        <div class="container-fluid containerStyle">
-            <a class="navbar-brand" href="main.html">PPY WEB</a>
-            <div>
-                <ul class="navbar-nav">
-                    <li class="navbar-item"><a class="nav-link" href="#">LOG_OUT</a></li>
-                    <li class="navbar-item"><div class="userImgBox"><a href="#"><img src="../src/Tako.png" class="userImg"></a></div></li>
-                </ul>
+<html>
+    <head>
+        <title>PPY WEB</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <style>
+            .containerStyle{
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .navbar-style{
+                background-color: white;
+                box-shadow: 0 0 5px 0 #878a8d;
+            }
+            .navbar-brand{
+                font-size: 30px;
+            }
+            .userImgBox{
+                height: 40px;
+                width: 40px;
+            }
+            .userImg{
+                border:2px rgba(187, 187, 187, 0.65) solid;
+                height: 100%;
+                width: 100%;
+            }
+            .userImg:hover{
+                border:2px rgba(131, 131, 131, 0.65) solid;
+            }
+            .appName{
+                font-size: 50px;
+                font-style: italic;
+                border-bottom: 3px #878a8dc7 solid;
+            }
+            .createrName{
+                font-size: 25px;
+                color:rgb(175, 175, 175);
+                border-bottom: 3px #c9c9c9c7 solid;
+                padding-top: 15px;
+            }
+            .UperArea{
+                position: relative;
+                margin-bottom: 25px;
+                margin-top: 25px;
+                height: 200px;
+            }
+            .UperLeftArea{
+                /* background-color: rgb(202, 230, 139); */
+                position: absolute;
+                bottom: 0px;
+            }
+            .iconArea{
+                background-color: rgb(230, 209, 139);
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+            }
+            .iconImg{
+                /* height: 100%; */
+                max-width: 100%;
+                max-height: 100%;
+            }
+            .iconBox{
+                width: 200px;
+                height: 200px;
+            }
+            .LowerArea{
+                /* background-color: aliceblue; */
+                height: 100px;
+            }
+            .LowerLeftArea{
+                background-color: rgb(246, 240, 255);
+            }
+            .LowerRightArea{
+                background-color: rgb(255, 237, 225);
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar sticky-top bg-light navbar-light navbar-expand-sm navbar-style">
+            <div class="container-fluid containerStyle">
+                <a class="navbar-brand" href="main.html">PPY WEB</a>
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="navbar-item"><a class="nav-link" href="#">LOG_OUT</a></li>
+                        <li class="navbar-item"><div class="userImgBox"><a href="#"><img src="../src/Tako.png" class="userImg"></a></div></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!--上半-->
+        <div class="container">
+            <div class="row UperArea">
+                <div class="col-9 UperLeftArea">
+                    <div class="row">
+                        <span class="col-md-8 appName">章魚吃葉葉</span>
+                    </div>
+                    <div class="row">
+                        <span class="col-md-6 createrName">他扣與他的小夥伴</span>
+                    </div>
+                </div>
+                <div class="col-3 iconArea">
+                    <center><div class="iconBox"><img src="../src/icon.png" class="iconImg"></div></center>
+                </div>
+            </div>
+            <!--下半-->
+            <div class="row LowerArea">
+                <div class="col-9 LowerLeftArea">
+                    <div class="row" style="background-color: rgb(215, 255, 217); height: 300px;">
+                        放payㄉ酷東東
+
+                    </div>
+                    <div class="row" style="background-color: rgb(215, 230, 255); height: 700px;">
+                        
+                    </div>
+                </div>
+                <div class="col LowerRightArea">
+
+                </div>
             </div>
         </div>
-    </nav>
 
-    <!--上半-->
-    <div class="container">
-        <div class="row UperArea">
-            <div class="col-9 UperLeftArea">
-                <div class="row">
-                    <span class="col-md-8 appName">章魚吃葉葉</span>
-                </div>
-                <div class="row">
-                    <span class="col-md-6 createrName">他扣與他的小夥伴</span>
-                </div>
-            </div>
-            <div class="col-3 iconArea">
-                <img src="../src/icon.png" class="iconImg">
-            </div>
-        </div>
-        <!--下半-->
-        <div class="row LowerArea">
-            <div class="col-9 LowerLeftArea">
-                <div class="row" style="background-color: rgb(215, 255, 217); height: 300px;">
-                    放payㄉ酷東東
-
-                </div>
-                <div class="row" style="background-color: rgb(215, 230, 255); height: 700px;">
-                    
-                </div>
-            </div>
-            <div class="col LowerRightArea">
-
-            </div>
-        </div>
-    </div>
-
-</body>
-<script>
-    
-</script>
+    </body>
+    <script>
+        
+    </script>
+</html>
