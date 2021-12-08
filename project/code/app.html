@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
         <link rel="stylesheet" href="../css/ppy.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
@@ -79,6 +81,21 @@
             .LowerRightArea{
                 background-color: rgb(255, 237, 225);
             }
+            .swiper-container{
+                width: 100%;
+                height: 100%;
+                /* margin: 100px auto; */
+
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            
+            }
+            .swiper-item{
+                object-fit: contain;
+                width: fix;
+                height: fix;
+            }
         </style>
     </head>
     <body>
@@ -113,8 +130,20 @@
             <div class="row LowerArea">
                 <div class="col-9 LowerLeftArea">
                     <div class="row" style="background-color: rgb(215, 255, 217); height: 300px;">
-                        放payㄉ酷東東
-
+                        <div class="swiper-container">
+                            <div><img class="swiper-item" src="../src/bird1.jpg"></div>
+                            <div><img class="swiper-item" src="../src/bird2.jpg"></div>
+                            <div><img class="swiper-item" src="../src/bird3.jpg"></div>
+                            <div><img class="swiper-item" src="../src/bird1.jpg"></div>
+                            <div><img class="swiper-item" src="../src/bird2.jpg"></div>
+                            <div><img class="swiper-item" src="../src/bird3.jpg"></div>
+                            <div><img class="swiper-item" src="../src/bird1.jpg"></div>
+                            <div><img class="swiper-item" src="../src/bird2.jpg"></div>
+                            <div><img class="swiper-item" src="../src/bird3.jpg"></div>
+                            <div><img class="swiper-item" src="../src/bird1.jpg"></div>
+                            <div><img class="swiper-item" src="../src/bird2.jpg"></div>
+                            <div><img class="swiper-item" src="../src/bird3.jpg"></div>
+                        </div>
                     </div>
                     <div class="row" style="background-color: rgb(215, 230, 255); height: 700px;">
                         
@@ -126,8 +155,36 @@
             </div>
         </div>
 
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <script>
+            $('.swiper-container').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            dots:true,
+
+            responsive: [
+                {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 3
+                }
+                },
+                {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+                }
+            ]
+            });
+        </script>
     </body>
-    <script>
-        
-    </script>
 </html>
