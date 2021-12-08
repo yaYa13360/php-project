@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/bootstrap.min.css"> 
+	<link rel="stylesheet" href="../css/ppy.css">
 	<script src="../js/jquery-3.4.1.min.js"></script>
-	<script src="../bootstrap/js/bootstrap.min.js"></script>	
+	<script src="../js/bootstrap.min.js"></script>	
 	<style>
 		.up{
 			height:10vh;
@@ -28,7 +29,6 @@
 		}
 		.buttonId{
 			background-color:transparent;
-			<!-border:none;->
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -71,6 +71,17 @@
 	</script>
 </head>
 <body>
+	<nav class="navbar sticky-top bg-light navbar-light navbar-expand-sm navbar-style">
+		<div class="container-fluid containerStyle">
+			<a class="navbar-brand" href="main.html">PPY WEB</a>
+			<div>
+				<ul class="navbar-nav">
+					<li class="navbar-item"><a class="nav-link" href="#">LOG_OUT</a></li>
+					<li class="navbar-item"><div class="userImgBox"><a href="#"><img src="../src/Tako.png" class="userImg"></a></div></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="paddUD">&nbsp;</div>
@@ -88,15 +99,15 @@
 		<div class="row">
 			<div class="col-1 paddRL">&nbsp;</div>
 			<div class="col-10 down" >
-				<center class="<!-center->">
+				<center>
 					<p><input type="text" style="width:15%" placeholder="Name" id="id"></P>
 					<p><input type="text" style="width:30%" placeholder="Email(Account)" id="account"></P>
 					<p>
 						<input type="text" style="width:15%" placeholder="password" id="password">
 						<input type="text" style="width:15%" placeholder="check again" id="passwordC">
 					</P>
-					<p><button class="buttonCheck" id="checkButton" onclick="#">sign in</button></p>
-					<p><button class="buttonChange" id="changeButton" onclick="#">sign up</button></p>
+					<p><button class="buttonCheck" id="checkButton" onclick="">sign in</button></p>
+					<p><button class="buttonChange" id="changeButton" onclick="">sign up</button></p>
 				</center>
 			</div>
 			<div class="col-1 paddRL">&nbsp;</div>
