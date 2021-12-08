@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +7,21 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css"> 
 	<link rel="stylesheet" href="../css/ppy.css">
 	<script src="../js/bootstrap.min.js"></script>	
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
 	<style>
-	  div[class|="col"] {background-color:#EBDEF0; border:0.5px solid purple}
+	div[class|="col"] {background-color:#EBDEF0; border:0.5px solid purple}
+	.swiper-container{
+		left:10px;
+		width:98%;
+	  
+	}
+	.swiper-item{
+		width:100%;
+		height:90%;
+		top:10%;
+    }
 	</style>
   </head>
 <body>
@@ -26,7 +39,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col" style = "height: 300px;">
-				(一)宣傳圖片輪播處
+				  <div class="swiper-container">
+						<img class="swiper-item" src="../src/bird1.jpg">
+						<img class="swiper-item" src="../src/bird2.jpg">
+						<img class="swiper-item" src="../src/bird3.jpg">
+				  </div>
 			</div>
 		</div>
 		<div class="row">
@@ -41,8 +58,16 @@
 			</div>
 		</div>
 	</div>
-
-
-
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+$('.swiper-container').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  dots:true
+});
+</script>
 </body>
 </html>
