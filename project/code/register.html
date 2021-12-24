@@ -58,6 +58,7 @@
 		}
 	</style>
 	<script>
+	
 		function userClick(){			
 		var obj=document.getElementById('account'); 
 		obj.name = 'email'; 
@@ -66,12 +67,22 @@
 		var obj=document.getElementById('account'); 
 		obj.name = 'createremail'; 
 		}
+      
+        function validateForm() {
+            var x = document.forms["registerForm"]["password"].value;
+            var y = document.forms["registerForm"]["password_check"].value;
+            if (x != y) {
+                alert("請確認密碼是否輸入正確");
+                return false;
+            }
+        }
+
 	</script>
 </head>
-<body onload="userClick()">
+<body  onload="userClick()">
 	<nav class="navbar sticky-top bg-light navbar-light navbar-expand-sm navbar-style">
 		<div class="container-fluid containerStyle">
-			<a class="navbar-brand" href="index.php">PPY WEB</a>
+			<a class="navbar-brand" href="index.html">PPY WEB</a>
 			<div>
 				<ul class="navbar-nav">
 					<li class="navbar-item"><a class="nav-link" href="#">LOG_OUT</a></li>
@@ -97,23 +108,21 @@
 		<div class="row">
 			<div class="col-1 paddRL">&nbsp;</div>
 			<div class="col-10 down">
-	<form action="login.php" method="post">
+			
+
+<form name="registerForm" method="post" action="register.php" onsubmit="return validateForm()">
 				<center>
 
-					<p><input type="text" style="width:15%" placeholder="Name" id="id" name="name"></P>
+					<p><input type="text" style="width:15%" placeholder="Name" id="id" name="name" ></P>
 					<p><input type="text" style="width:30%" placeholder="Email(Account)" id="account" name=""></P>
 					<p>
-						<input type="text" style="width:15%" placeholder="password" id="password" name="password">
-						<input type="text" style="width:15%" placeholder="check again" id="passwordC">
+						<input type="password" style="width:15%" placeholder="password" id="password" name="password">
+						<input type="password" style="width:15%" placeholder="check again" id="passwordC"  name="password_check">
 					</P>
-					<p><button class="buttonCheck" id="checkButton" onclick="" name="submit">sign in</button></p>
-	
-					<p><a href="register.php">還沒有帳號?</a></p>
-					
+					<p><button class="buttonChange" id="changeButton" onclick="" name="submit">sign up</button></p>
 
 				</center>
-	</form>
-
+</form>
 			</div>
 			<div class="col-1 paddRL">&nbsp;</div>
 		</div>
@@ -121,7 +130,5 @@
 			<div class="paddUD">&nbsp;</div>
 		</div>
 	</div>
-
-
 </body>
 </html>
