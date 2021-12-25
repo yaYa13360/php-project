@@ -7,9 +7,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$email=$_POST["email"];
 		$identity='user';
 	}
-	else if($_POST["createremail"]){
-		$email=$_POST["createremail"];
-		$identity='creater';
+	else if($_POST["creatoremail"]){
+		$email=$_POST["creatoremail"];
+		$identity='creator';
 	}
 	else{
 		echo "<script> alert('wrong!!!');</script>";

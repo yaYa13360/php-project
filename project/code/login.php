@@ -1,12 +1,12 @@
 <?php
-require("test.html");
+require("signIn.html");
 $conn=require_once "config.php"; //引入資料庫
 
 if($_POST["email"]){ 
 	$email=$_POST["email"];
 	}
-else if($_POST["createremail"]){
-	$email=$_POST["createremail"];
+else if($_POST["creatoremail"]){
+	$email=$_POST["creatoremail"];
 	}
 else{
 	//echo "<script> alert('wrong222!!!');</script>";
