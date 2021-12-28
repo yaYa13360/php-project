@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+<div style="padding-top:10px">
+	<form name="upLoadForm" method="post" action="upLoad.php">
+		<center>
+			<p><input type="text" id="gameName" style="font-size:18px" name="gameName" placeholder="遊戲名稱"></p>
+			<p><input type="text" id="gameClass" style="font-size:18px" name="classification" placeholder="遊戲分類"></p>
+			<p><textarea id="gameIntro" style="height:55%;width:50%;font-size:18px;" name="introduction" placeholder="遊戲介紹"></textarea></p>
+			<!--還未建立-->
+			<p><input type="text" id="gameLink" style="width:50%" name="gamelink" placeholder="遊戲連結"></p>
+			
+			<p><button id="sendButton" onclick="send()" name="submit">上傳</button></p>
+		</center>
+	</form>
+</div>
+</body>
+</html>

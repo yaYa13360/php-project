@@ -51,6 +51,16 @@
 		<div class="row">
 			<div class="col-3" style = "height: 600px;">
 				(二)類別
+				<?php
+					$pdo=new PDO('mysql:host=localhost;dbname=ppyweb;charset=utf8', 
+						'yaya', 'emily890923');
+					foreach ($pdo->query('select * from gamelist') as $row) {
+						echo '<a href="test2.html"><p>';
+						echo $row['classification'];
+						echo '</p></a>';
+					}
+				?>
+				
 			</div>
 			<div class="col-6" style = "height: 600px;">
 				(三)介紹PPY

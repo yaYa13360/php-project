@@ -20,7 +20,7 @@
 		.down{
 			height:70vh;
 			width:100%;
-			background-color:yellow;
+			background-color:#EBDEF0;
 		}
 		.paddRL{
 			height:auto;
@@ -32,15 +32,11 @@
 			height:100%;
 		}
 		.center{
-			background-color:yellow;
+			background-color:#EBDEF0;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 
-		}
-		.buttonCheck{
-			width:15%;
-			height:5%;
 		}
 		.buttonChange{
 			width:auto;
@@ -60,15 +56,15 @@
 	<script>
 		function userClick(){			
 			var obj=document.getElementById('account'); 
-			document.getElementById('choiceSec').style.backgroundColor = "yellow";
+			document.getElementById('choiceSec').style.backgroundColor = "#EBDEF0";
 			obj.name = 'email'; 
 			
 			
 		}
 		function creatorClick(){
 			var obj=document.getElementById('account'); 
-			document.getElementById('choiceSec').style.backgroundColor = "gray";
-			obj.name = 'createremail'; 
+			document.getElementById('choiceSec').style.backgroundColor = "#BC99CA";
+			obj.name = 'creatoremail'; 
 			
 		}
 	</script>
@@ -91,29 +87,29 @@
 		</div>
 		<div class="row">
 			<div class="col-1 paddRL">&nbsp;</div>
-			<div class="col-5 up" style="background-color:yellow">
+			<div class="col-5 up" style="background-color:#EBDEF0">
 				<button class="buttonId" style="border:none" id="userId" onclick="userClick()"><font color="#">User</font></button>
 			</div>
-			<div class="col-5 up creator" style="background-color:gray">
+			<div class="col-5 up creator" style="background-color:#BC99CA">
 				<button class="buttonId" style="border:none" id="creatorId" onclick="creatorClick()"><font color="#">Creator</font></button>
 			</div>
 			<div class="col-1 paddRL">&nbsp;</div>
 		</div>
 		<div class="row">
 			<div class="col-1 paddRL">&nbsp;</div>
-			<div class="col-10 down" id = "choiceSec">
+			<div class="col-10 down" id = "choiceSec" style="padding-top:10%">
 	<form action="login.php" method="post">
 				<center>
 
-					<p><input type="text" style="width:15%" placeholder="Name" id="id" name="name"></P>
-					<p><input type="text" style="width:30%" placeholder="Email(Account)" id="account" name=""></P>
-					<p>
+					<p style="padding-top:1%"><input type="text" style="width:15%" placeholder="Name" id="id" name="name"></P>
+					<p style="padding-top:1%"><input type="text" style="width:30%" placeholder="Email(Account)" id="account" name=""></P>
+					<p style="padding-top:1%">
 						<input type="text" style="width:15%" placeholder="password" id="password" name="password">
 						<input type="text" style="width:15%" placeholder="check again" id="passwordC">
 					</P>
-					<p><button class="buttonCheck" id="checkButton" onclick="" name="submit">sign in</button></p>
+					<p style="padding-top:1%"><button class="buttonChange" id="checkButton" onclick="" name="submit">sign in</button></p>
 	
-					<p><a href="register.php">還沒有帳號?</a></p>
+					<p style="padding-top:1%"><a href="register.php">還沒有帳號?</a></p>
 					
 
 				</center>

@@ -9,8 +9,58 @@
 	<script src="../js/bootstrap.min.js"></script>	
 	<style>
 	  div[class|="col"] {background-color:#EBDEF0; border:0.5px solid purple}
+	
+		.up{
+			height:20vh;
+			width:100%;
+		}
+		.down{
+			height:70vh;
+			width:100%;
+			background-color:yellow;
+		}
+	
+		.col-9 input{
+			width:25%;
+			height:50%;
+		}
+		.bt{ border: none;
+			background: transparent; 
+			color: blue;
+			font-size: 20px;
+			padding: 20px;
+			width: 200px;
+			border-radius: 5px;
+		} 
+		.bt span{ 
+			transition: 0.5s; 
+		} 
+		.bt:hover span{ 
+			padding-right: 25px;
+		} 
+		.bt span:after{ 
+			content: "»";
+			opacity: 0; 
+			transition: 0.5s;
+		} 
+		.bt:hover span:after{ opacity: 1;}
 	</style>
   </head>
+  <script>
+		function upLoad(){
+			document.getElementById('middleCol').innerHTML = "";
+			var iframe= document.createElement('iframe');
+			iframe.src= 'upLoadGame.html';
+			iframe.width= 820;
+			iframe.height = 500;
+			iframe.frameBorder = 0;
+			document.getElementById('middleCol').appendChild(iframe);
+		}
+		function test(){
+			str="Hello Javascript!";
+			document.getElementById('middleCol').innerHTML=str;
+		}
+	</script>
 <body>
 	<nav class="navbar sticky-top bg-light navbar-light navbar-expand-sm navbar-style">
 		<div class="container-fluid containerStyle">
@@ -25,22 +75,22 @@
 	</nav>
 	<div class="container">
 		<div class="row">
-			<div class="col-3" style = "height: 300px;">
+			<div class="col-3 up">
 				<!--(一)圖片放置-->
-				<img src="../src/people.png" style="height:300px;width:auto">
+				<center><img src="../src/people.png" style="height:100%;width:auto"></center>
 			</div>
-			<div class="col-9" style = "height: 300px;">
+			<div class="col-9 up" id="upCol">
 				(二)icon<br>name
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-3" style = "height: 600px;">
-				(三)<br>
-				儲值紀錄<br>
-				遊戲紀錄<br>
-				客服<br>
+			<div class="col-3 down">
+				<center><button class="bt" onclick='test();'> <span>儲值紀錄</span></button><br></center>
+                <center><button class="bt" onclick='test();'> <span>遊戲紀錄</span></button></center>
+				<center><button class="bt" onclick='upLoad();'> <span>上傳遊戲</span></button></center>
+
 			</div>
-			<div class="col-9" style = "height: 600px;">
+			<div class="col-9 down" id="middleCol">
 				(四) = (二)+(三)
 				<p>:))))</p>
 				
