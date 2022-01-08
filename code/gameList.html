@@ -11,8 +11,18 @@
 	
 	<style>
 		.iconImg{
-			max-width: 100%;
-			max-height: 100%;
+			width: 350px;
+			height: auto;
+		}
+		.gameTypeText{
+			font-weight:800;
+			font-size:50;
+			background-color:#BC99CA;
+		}
+		.box-border{
+			position:relative;
+			width:400px;
+			border-bottom:2px solid rgba(70,28,79,0.5);
 		}
     </style>
 </head>
@@ -30,21 +40,25 @@
 	</nav>
     <!--網頁內容-->
 	<div class="container">
-		<div class="row" style="background-color:#46A3FF">
+		<div class="row" style="background-color:white">
 				
 				<div class="col-12">
 					<p id="gameType">
-						<u><h1>
+						<font class="gameTypeText"><h1>
 						<?php 
+							echo "&nbsp;&nbsp;&nbsp;&nbsp";
 							$gName = $_GET["gameName"];
 							echo $gName;
-						?>遊戲
-						</h1></u>
+							echo "遊戲&nbsp;&nbsp;&nbsp;&nbsp";
+						?>
+						
+						</h1></font>
 					</p>
 				</div>
 		</div>
 		<div class="row" style="background-color:white">
 			<div class="col-9">
+				
 				<?php
 					$gameName = $_GET["gameName"];
 					$con=require_once("config.php"); //引入資料庫
@@ -57,14 +71,19 @@
 						<br>
 						<div class="row">
 							<?php 
-								echo "<div class='col-3' style='background-color:#97CBFF'><img src='showPic.php?gName=". $rs[0] ."&kind=gameIcon' class='iconImg'></div>";
+								echo "<div class='col-4' style='background-color:#EBDEF0'><img src='showPic.php?gName=". $rs[0] ."&kind=gameIcon' class='iconImg'></div>";
 							?>
-							<div class="col-9" style="background-color:#97CBFF">
+							<div class="col-8" style="background-color:#EBDEF0">
 								<?php
-									echo '<h3><a href="app.php?gameName='.$rs[0].'" class="a-class" style="color:#5151A2"><b><span>';
+									echo '<span style="font-size:50px;font-weight:bold;"><a href="app.php?gameName='.$rs[0].'" style="color:rgba(70,28,79,1);text-decoration: none;">';
 									echo $rs[0];
-									echo '</span></b></a></h3>';
-									echo '遊戲介紹：'.$rs[1];
+									echo '</a></span>';
+									echo '<div class="box-border"></div>';
+									echo '<br><span style="font-weight:bold;size:20;">遊戲介紹：</span><br><span>'.mb_substr( $rs[1], 0, 132, 'utf-8').'</span>';
+									//超過165字數則做縮減
+									//echo strlen($rs[1]);
+									if(strlen($rs[1])>132*3)
+										echo "<br><span style='float:right;color:rgba(70,28,79,1)'><a href='app.php?gameName=".$rs[0]."'>...more>></a></span>";
 								?>
 							</div>
 						</div>
@@ -75,6 +94,7 @@
 				?>
 			</div>
 			<div class="col-3" style="background-color:#D2E9FF">ads</div>
+			
 		</div>
 	</div>
 </body>
