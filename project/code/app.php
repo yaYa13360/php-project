@@ -124,7 +124,7 @@
     <body>
         <nav class="navbar sticky-top bg-light navbar-light navbar-expand-sm navbar-style">
             <div class="container-fluid containerStyle">
-                <a class="navbar-brand" href="index.html">PPY WEB</a>
+                <a class="navbar-brand" href="index.php">PPY WEB</a>
                 <div>
                     <ul class="navbar-nav">
                         <li class="navbar-item"><a class="nav-link" href="#">LOG_OUT</a></li>
