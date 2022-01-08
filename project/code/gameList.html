@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title></title>
+    <title>PPY WEB</title>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,10 @@
 	<script src="../bootstrap/js/bootstrap.min.js"></script>	
 	
 	<style>
-        
+		.iconImg{
+			max-width: 100%;
+			max-height: 100%;
+		}
     </style>
 </head>
 <body>
@@ -27,29 +30,51 @@
 	</nav>
     <!--網頁內容-->
 	<div class="container">
-		<div class="row" style="background-color:red">
+		<div class="row" style="background-color:#46A3FF">
 				
 				<div class="col-12">
 					<p id="gameType">
-						<u><h1>休閒遊戲</h1></u>
+						<u><h1>
+						<?php 
+							$gName = $_GET["gameName"];
+							echo $gName;
+						?>遊戲
+						</h1></u>
 					</p>
 				</div>
 		</div>
-		<div class="row" style="background-color:green">
-				<div class="col-9">
-					//
-					<div class="row">
-						<div class="col-3" style="background-color:yellow">//icon</div>
-						<div class="col-9" style="background-color:white">//introduce</div>
-					</div>
-					//
-					<div class="row">
-						<div class="col-3" style="background-color:yellow">//icon</div>
-						<div class="col-9" style="background-color:white">//introduce</div>
-					</div>
-					//
-				</div>
-				<div class="col-3" style="background-color:blue">ads</div>
+		<div class="row" style="background-color:white">
+			<div class="col-9">
+				<?php
+					$gameName = $_GET["gameName"];
+					$con=require_once("config.php"); //引入資料庫
+					$sql = 'SELECT `gameName`, `introduction`, `classification`, `gameIcon` FROM `gamelist` WHERE classification="'.$gName.'"';
+					$result=mysqli_query($con, $sql);//選擇從資料表中讀取資料
+					
+					for($i=1;$i<=mysqli_num_rows($result);$i++){
+						$rs=mysqli_fetch_row($result);
+				?>
+						<br>
+						<div class="row">
+							<?php 
+								echo "<div class='col-3' style='background-color:#97CBFF'><img src='showPic.php?gName=". $rs[0] ."&kind=gameIcon' class='iconImg'></div>";
+							?>
+							<div class="col-9" style="background-color:#97CBFF">
+								<?php
+									echo '<h3><a href="app.php?gameName='.$rs[0].'" class="a-class" style="color:#5151A2"><b><span>';
+									echo $rs[0];
+									echo '</span></b></a></h3>';
+									echo '遊戲介紹：'.$rs[1];
+								?>
+							</div>
+						</div>
+				<?php		
+					}
+					mysqli_free_result($result);
+					mysqli_close($con);
+				?>
+			</div>
+			<div class="col-3" style="background-color:#D2E9FF">ads</div>
 		</div>
 	</div>
 </body>

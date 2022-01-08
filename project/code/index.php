@@ -40,7 +40,7 @@
 		width:100%;
 		height:100%;
 	}
-	.bt{ border: none;
+	.a-class{ border: none;
 		background: transparent; 
 		color: blue;
 		font-size: 20px;
@@ -48,24 +48,18 @@
 		width: 200px;
 		border-radius: 5px;
 	} 
-	.bt span{ 
+	.a-class span{ 
 		transition: 0.5s; 
 	} 
-	.bt:hover span{ 
+	.a-class:hover span{ 
 		padding-right: 25px;
 	} 
-	.bt span:after{ 
+	.a-class span:after{ 
 		content: "»";
 		opacity: 0; 
 		transition: 0.5s;
 	} 
-	.bt:hover span:after{ opacity: 1;}
-	</style>
-	<script>
-		function gameList(){
-			location.href="gameList.html";
-		}
-	</script>
+	.a-class:hover span:after{ opacity: 1;}
 	</style>
   </head>
 <body>
@@ -96,23 +90,22 @@
 		</div>
 		<div class="row">
 			<div class="col-3" style = "height: 600px;">
-				<!--(二)類別-->
+				<!--遊戲類別-->
+				<br>
 				<?php
-				$con=require_once("config.php"); //引入資料庫
-				$sql = "SELECT DISTINCT `classification` FROM `gameList`";
-				$result=mysqli_query($con, $sql);//選擇從資料表中讀取所有的資料
+					$con=require_once("config.php"); //引入資料庫
+					$sql = "SELECT DISTINCT `classification` FROM `gameList`";
+					$result=mysqli_query($con, $sql);//選擇從資料表中讀取classification的資料
 
-
-				for($i=1;$i<=mysqli_num_rows($result);$i++){
-					$rs=mysqli_fetch_row($result);
-					echo '<center><button class="bt" onclick="gameList();" name=> <span>';
-					echo $rs[0];
-					echo '</span></button><br></center>';
-				}
-				mysqli_free_result($result);
-				mysqli_close($con);
+					for($i=1;$i<=mysqli_num_rows($result);$i++){
+						$rs=mysqli_fetch_row($result);
+						echo '<center><a href="gameList.php?gameName='.$rs[0].'" class="a-class" style="color:#5151A2"><b><span>';
+						echo $rs[0];
+						echo '</span></b></a></center><br>';
+					}
+					mysqli_free_result($result);
+					mysqli_close($con);
 				?>
-				
 			</div>
 			<div class="col-6" style = "height: 600px;">
 				<span style="font-size:30px;font-weight:bold;"><關於我們></span><br>
