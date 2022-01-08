@@ -1,3 +1,10 @@
+<?php
+    include("config.php");
+    $gameName = $_GET["gameName"];
+    $sql_query = "SELECT * FROM `gamelist` WHERE `gameName` = '$gameName'";
+    $result = mysqli_query($link, $sql_query);
+    $row_result = mysqli_fetch_assoc($result);
+?>
 <html>
     <head>
         <title>PPY WEB</title>
@@ -39,7 +46,7 @@
                 font-style: italic;
                 border-bottom: 3px #878a8dc7 solid;
             }
-            .createrName{
+            .creatorName{
                 font-size: 25px;
                 color:rgb(175, 175, 175);
                 border-bottom: 3px #c9c9c9c7 solid;
@@ -63,7 +70,6 @@
                 bottom: 0px;
             }
             .iconImg{
-                /* height: 100%; */
                 max-width: 100%;
                 max-height: 100%;
             }
@@ -71,8 +77,25 @@
                 width: 200px;
                 height: 200px;
             }
+            .qrArea{
+                background-color: rgb(255, 204, 179);
+                padding-top: 10px;
+            }
+            .qrBox{
+                width: 200px;
+                height: 200px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .introArea{
+                background-color: rgb(224, 224, 255);
+                margin-left: 80px;
+                margin-top: 20px;
+                line-height: 50px;
+                font-family: Gill Sans, sans-serif;
+                font-size: 20px;
+            }
             .LowerArea{
-                /* background-color: aliceblue; */
                 height: 100px;
             }
             .LowerLeftArea{
@@ -92,10 +115,9 @@
                 box-sizing: border-box;
             
             }
-            .swiper-item{
-                object-fit: contain;
-                width: fix;
-                height: fix;
+            .swiper-container img{
+                width:100%;
+                height:100%;
             }
         </style>
     </head>
@@ -117,41 +139,73 @@
             <div class="row UperArea">
                 <div class="col-9 UperLeftArea">
                     <div class="row">
-                        <span class="col-md-8 appName">章魚吃葉葉</span>
+                        <!-- appName -->
+                        <span class="col-md-8 appName">
+                            <?php 
+                                echo $gameName 
+                            ?>
+                        </span>
                     </div>
                     <div class="row">
-                        <span class="col-md-6 createrName">他扣與他的小夥伴</span>
+                        <!-- creatorName -->
+                        <span class="col-md-6 creatorName">
+                            <?php 
+                            // echo $row_result['creator'];
+                            ?>
+                        </span>
                     </div>
                 </div>
                 <div class="col-3 iconArea">
-                    <center><div class="iconBox"><img src="../src/icon.png" class="iconImg"></div></center>
+                    <!-- iconPic -->
+                    <center>
+                        <div class="iconBox">
+                            <?php
+                                echo "<img src='showPic.php?gName=". $gameName ."&kind=gameIcon' class='iconImg' id='icon'>"
+                            ?>
+                        </div>
+                    </center>
                 </div>
             </div>
             <!--下半-->
             <div class="row LowerArea">
                 <div class="col-9 LowerLeftArea">
-                    <div class="row" style="background-color: rgb(215, 255, 217); height: 300px;">
+                    <!-- 圖片區域 -->
+                    <div class="row" style="background-color: rgb(215, 255, 217); height: 400px;">
                         <div class="swiper-container">
-                            <div><img class="swiper-item" src="../src/bird1.jpg"></div>
-                            <div><img class="swiper-item" src="../src/bird2.jpg"></div>
-                            <div><img class="swiper-item" src="../src/bird3.jpg"></div>
-                            <div><img class="swiper-item" src="../src/bird1.jpg"></div>
-                            <div><img class="swiper-item" src="../src/bird2.jpg"></div>
-                            <div><img class="swiper-item" src="../src/bird3.jpg"></div>
-                            <div><img class="swiper-item" src="../src/bird1.jpg"></div>
-                            <div><img class="swiper-item" src="../src/bird2.jpg"></div>
-                            <div><img class="swiper-item" src="../src/bird3.jpg"></div>
-                            <div><img class="swiper-item" src="../src/bird1.jpg"></div>
-                            <div><img class="swiper-item" src="../src/bird2.jpg"></div>
-                            <div><img class="swiper-item" src="../src/bird3.jpg"></div>
+                            <?php
+                                echo "<div><img src='showPic.php?gName=". $gameName ."&kind=gamePic1'></div>";
+                                echo "<div><img src='showPic.php?gName=". $gameName ."&kind=gamePic2'></div>";
+                                echo "<div><img src='showPic.php?gName=". $gameName ."&kind=gamePic3'></div>";
+                                echo "<div><img src='showPic.php?gName=". $gameName ."&kind=gamePic4'></div>";
+                                echo "<div><img src='showPic.php?gName=". $gameName ."&kind=gamePic5'></div>";
+                            ?>
                         </div>
                     </div>
+                    <!-- 介紹區域 -->
                     <div class="row" style="background-color: rgb(215, 230, 255); height: 700px;">
-                        
+                        <div class="introArea">
+                            <?php
+                                $tempS = strtok($row_result['introduction'], "\n");
+                                while($tempS){
+                                    echo $tempS ."<br>";
+                                    $tempS = strtok("\n");
+                                }
+                            ?>
+                        </div>
                     </div>
                 </div>
+                <!-- 廣告區 -->
                 <div class="col LowerRightArea">
-
+                    <div class="qrArea">
+                        <center>
+                        <b>遊戲下載：</b>
+                        <div class="qrBox">
+                            <?php
+                                echo "<img src='showPic.php?gName=". $gameName ."&kind=gameQR' class='iconImg' id='icon'>"
+                            ?>
+                        </div>
+                        </center>
+                    </div>
                 </div>
             </div>
         </div>
