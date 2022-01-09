@@ -127,8 +127,8 @@
                 <a class="navbar-brand" href="index.php">PPY WEB</a>
                 <div>
                     <ul class="navbar-nav">
-                        <li class="navbar-item"><a class="nav-link" href="#">LOG_OUT</a></li>
-                        <li class="navbar-item"><div class="userImgBox"><a href="personal.html"><img src="../src/Tako.png" class="userImg"></a></div></li>
+                        <li class="navbar-item"><a class="nav-link" href="logout.php">LOG_OUT</a></li>
+                        <li class="navbar-item"><div class="userImgBox"><a href="personal.php><img src="../src/Tako.png" class="userImg"></a></div></li>
                     </ul>
                 </div>
             </div>

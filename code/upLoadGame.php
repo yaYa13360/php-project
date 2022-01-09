@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	$sql="INSERT INTO gamelist (gameName,introduction,classification,gameQR,gameIcon,gamePic1,gamePic2,gamePic3,gamePic4,gamePic5,creatorName)
 			VALUES('".$gameName."','".$introduction."','".$classification."','".$data1."','".$data2."','".$pic1."','".$pic2."','".$pic3."','".$pic4."','".$pic5."','".$creatorName."')";      
 	if(mysqli_query($conn, $sql)){
-		echo "<script> alert('上傳成功!');parent.location.href='personal.html'; </script>";
+		echo "<script> alert('上傳成功!');parent.location.href='personal.php'; </script>";
 		exit;
 	}else{
 		echo "<script> alert('wrong!!!');</script>";

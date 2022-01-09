@@ -8,9 +8,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
 	if($_POST["email"]){ 
 		$email=$_POST["email"];
+		$identity = 'user';
 		}
 	else if($_POST["creatoremail"]){
 		$email=$_POST["creatoremail"];
+		$identity = 'creator';
 		}
 	else{
 		//echo "<script> alert('wrong222!!!');</script>";
@@ -22,13 +24,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		
     $sql = "SELECT * FROM account WHERE email ='".$email."'";
     $result=mysqli_query($conn,$sql);
-    if(mysqli_num_rows($result)==1 && $password==mysqli_fetch_assoc($result)["password"]){
-		$sql2 = "SELECT name FROM account WHERE email ='".$email."'";
-		$result2 = mysqli_query($conn,$sql2);
+	$result1 = mysqli_query($conn,$sql);
+
+    if(mysqli_num_rows($result)==1 && $password==mysqli_fetch_assoc($result)["password"] && $identity == mysqli_fetch_assoc($result1)["identity"]){
+		$result2 = mysqli_query($conn,$sql);
 		$username = mysqli_fetch_assoc($result2)["name"];
+		$result3 = mysqli_query($conn,$sql);
+		$id = mysqli_fetch_assoc($result3)["id"];
         session_start();
         $_SESSION["login"] = true;
-		$_SESSION["name"] = $username ;
+		$_SESSION["name"] = $username;
+		$_SESSION["id"] = $id;
+		$_SESSION["identity"] = $identity;
         header("location:index.php");
     }
 	else{

@@ -5,11 +5,13 @@
         echo "<script> alert('welcome ".$name." !!!');</script>";
         $log_text = "LOG_OUT";
         $log_link = "logout.php";
+		$link = "personal.php";
     }
     else{
         echo "<script> alert('welcome guest !!!');</script>";
         $log_text = "LOG_IN";
         $log_link = "login.php";
+		$link = "index.php";
     }
 ?>
 <html lang="en">
@@ -69,11 +71,16 @@
 			<div>
 				<ul class="navbar-nav">
 					<li class="navbar-item">
-            <?php
+			<?php
                 echo '<a class="nav-link" href="'.$log_link.'">'.$log_text.'</a>';
             ?>
-          </li>
-					<li class="navbar-item"><div class="userImgBox"><a href="#"><img src="../src/Tako.png" class="userImg"></a></div></li>
+					</li>
+					<li class="navbar-item"><div class="userImgBox">
+			<?php
+				echo '<a href="'.$link.'"><img src="../src/Tako.png" class="userImg"></a>';
+			?>
+					</div>
+					</li>
 				</ul>
 			</div>
 		</div>
