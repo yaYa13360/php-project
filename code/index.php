@@ -30,7 +30,8 @@
 	div[class|="col"] {background-color:rgba(0, 0, 0, 0.7); border:0.5px solid rgba(207, 207, 247, 0.7)}
 	.swiper-container{
 		left:10px;
-		width:98%;
+		width:50%;
+		margin:auto;
 
 	}
 	.swiper-item{
@@ -100,11 +101,11 @@
 	</nav>
 	<div class="container">
 		<div class="row">
-			<div class="col" style = "height: 300px;">
+			<div class="col" style = "">
 				  <div class="swiper-container">
-						<img class="swiper-item" src="../src/bird1.jpg">
-						<img class="swiper-item" src="../src/bird2.jpg">
-						<img class="swiper-item" src="../src/bird3.jpg">
+						<img class="swiper-item" src="../src/game1.jpg">
+						<img class="swiper-item" src="../src/game2.jpg">
+						<img class="swiper-item" src="../src/game3.jpg">
 				  </div>
 			</div>
 		</div>

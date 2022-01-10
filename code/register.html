@@ -14,13 +14,13 @@
 			width:100%;
 		}
 		.creator{
-			background: linear-gradient(-45deg, transparent 88%, white 0);
+			background: linear-gradient(135deg, transparent 13%, rgba(188,153,202,0.6) 0);
 			background-repeat: no-repeat;
 		}
 		.down{
 			height:70vh;
 			width:100%;
-			background-color:#EBDEF0;
+			background-color:rgba(235,242,240,0.6);
 		}
 		.paddRL{
 			height:auto;
@@ -30,6 +30,9 @@
 			background-color:transparent;
 			width:100%;
 			height:100%;
+			font-family:Comic Sans MS, Comic Sans, cursive;
+			font-weight:bold;
+			color:#410C55;
 		}
 		.center{
 			background-color:#EBDEF0;
@@ -44,11 +47,11 @@
 		}
 		.buttonChange{
 			width:auto;
-			height:5%;
+			height:auto;
 			border:none;
-			background-color:transparent;
-			color:blue;
-			text-decoration:underline;
+			color:#410C55;
+			background-color:rgba(255,255,255,255,0.1);
+			padding: 5px 20px;
 
 		}
 		.paddUD{
@@ -75,12 +78,12 @@
 		function userClick(){			
 			var obj=document.getElementById('account'); 
 			obj.name = 'email'; 
-			document.getElementById('choiceSec').style.backgroundColor = "#EBDEF0";
+			document.getElementById('choiceSec').style.backgroundColor = "rgba(235,242,240,0.6)";
 		}
 		function creatorClick(){
 			var obj=document.getElementById('account'); 
 			obj.name = 'creatoremail'; 
-			document.getElementById('choiceSec').style.backgroundColor = "#BC99CA";
+			document.getElementById('choiceSec').style.backgroundColor = "rgba(188,153,202,0.6)";
 		}
       
         function validateForm() {
@@ -115,17 +118,17 @@
 		</div>
 		<div class="row" >
 			<div class="col-1 paddRL">&nbsp;</div>
-			<div class="col-5 up" style="background-color:#EBDEF0">
+			<div class="col-5 up" style="background-color:rgba(235,242,240,0.6)">
 				<button class="buttonId" style="border:none" id="userId" onclick="userClick()"><font color="#">User</font></button>
 			</div>
-			<div class="col-5 up creator" style="background-color:#BC99CA">
+			<div class="col-5 up creator" style="background-color:transparent">
 				<button class="buttonId" style="border:none" id="creatorId" onclick="creatorClick()"><font color="#">Creator</font></button>
 			</div>
 			<div class="col-1 paddRL">&nbsp;</div>
 		</div>
 		<div class="row">
 			<div class="col-1 paddRL">&nbsp;</div>
-			<div class="col-10 down" id="choiceSec" style="padding-top:10%">
+			<div class="col-10 down" id="choiceSec" style="padding-top:13%">
 			
 
 <form name="registerForm" method="post" action="register.php" onsubmit="return validateForm()">

@@ -6,19 +6,19 @@ $conn=require_once "config.php"; //引入資料庫
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
-	if($_POST["email"]){ 
-		$email=$_POST["email"];
-		$identity = 'user';
-		}
-	else if($_POST["creatoremail"]){
+	if($_POST["creatoremail"]){
 		$email=$_POST["creatoremail"];
 		$identity = 'creator';
+		}
+	else if($_POST["email"]){ 
+		$email=$_POST["email"];
+		$identity = 'user';
 		}
 	else{
 		//echo "<script> alert('wrong222!!!');</script>";
 		}
 	 
-	$username=$_POST["name"];
+	//$username=$_POST["name"];
 	$password=$_POST["password"];
 	$password_hash=password_hash($password,PASSWORD_DEFAULT); //提高密碼安全性
 		
