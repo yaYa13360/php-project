@@ -54,7 +54,20 @@
 		.paddUD{
 			height:5vh;
 			width:100%;
-			background-color:white
+
+		}
+
+		.navbar-style{
+			background-color: #51244C;
+			box-shadow: 0px 0px 5px 0px #CDBCCB;
+		}
+		nav a {
+			color: inherit; /* 移除超連結顏色 */
+			text-decoration: none;  /* 移除超連結底線 */
+			color: #F5F5FF;
+		}
+		nav a:hover {
+			color: #C7C7E2;
 		}
 	</style>
 	<script>
@@ -84,9 +97,9 @@
 	<script>
 	</script>
 </head>
-<body  onload="userClick()">
-	<nav class="navbar sticky-top bg-light navbar-light navbar-expand-sm navbar-style">
-		<div class="container-fluid containerStyle">
+<body background="../src/bg.jpg" style="background-size:100% 100%; color: rgb(255, 255, 255);">
+	<nav class="navbar sticky-top navbar-expand-sm navbar-style">
+		<div class="container-fluid">
 			<a class="navbar-brand" href="index.php">PPY WEB</a>
 			<div>
 				<ul class="navbar-nav">
