@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
 	<style>
-	div[class|="col"] {background-color:#EBDEF0; border:0.5px solid purple}
+	div[class|="col"] {background-color:rgba(0, 0, 0, 0.7); border:0.5px solid rgba(207, 207, 247, 0.7)}
 	.swiper-container{
 		left:10px;
 		width:98%;
@@ -62,12 +62,25 @@
 		transition: 0.5s;
 	} 
 	.a-class:hover span:after{ opacity: 1;}
+
+	.navbar-style{
+		background-color: #51244C;
+		box-shadow: 0px 0px 5px 0px #CDBCCB;
+	}
+	nav a {
+		color: inherit; /* 移除超連結顏色 */
+		text-decoration: none;  /* 移除超連結底線 */
+		color: #F5F5FF;
+	}
+	nav a:hover {
+		color: #C7C7E2;
+	}
 	</style>
   </head>
-<body>
-	<nav class="navbar sticky-top bg-light navbar-light navbar-expand-sm navbar-style">
-		<div class="container-fluid containerStyle">
-			<a class="navbar-brand" href="index.php">PPY WEB</a>
+<body background="../src/bg.jpg" style="background-size:100% 100%; color: rgb(255, 255, 255);">
+	<nav class="navbar sticky-top navbar-expand-sm navbar-style">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.php"">PPY WEB</a>
 			<div>
 				<ul class="navbar-nav">
 					<li class="navbar-item">
@@ -77,7 +90,7 @@
 					</li>
 					<li class="navbar-item"><div class="userImgBox">
 			<?php
-				echo '<a href="'.$link.'"><img src="../src/Tako.png" class="userImg"></a>';
+				echo '<a href="'.$link.'"><img src="../src/people.png" class="userImg"></a>';
 			?>
 					</div>
 					</li>
@@ -106,7 +119,7 @@
 
 					for($i=1;$i<=mysqli_num_rows($result);$i++){
 						$rs=mysqli_fetch_row($result);
-						echo '<center><a href="gameList.php?gameName='.$rs[0].'" class="a-class" style="color:#5151A2"><b><span>';
+						echo '<center><a href="gameList.php?gameName='.$rs[0].'" class="a-class" style="color: white; text-decoration: none;"><b><span>';
 						echo $rs[0];
 						echo '</span></b></a></center><br>';
 					}
@@ -124,7 +137,7 @@
 					還在等甚麼，快來註冊PPY吧!
 				</p>
 			</div>
-			<div class="col-3" style = "height: 600px;">
+			<div class="col-3" style = "height: 600px; padding-bottom: 100px; padding-top: 20px;"">
 				<img src="../src/我是廣告.png"> 
 			</div>
 		</div>

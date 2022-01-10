@@ -11,7 +11,7 @@ $user_id =$_SESSION["id"];
 
 				while($rs=mysqli_fetch_row($result)) {
 echo "<br>";
-echo "<font size= '5'>";
+echo "<font size= '5' color='white'>";
 echo "<ul style='list-style-type: square;'>";
 echo "<li>";
                 for($j=0; $j<mysqli_num_fields($result); $j++) {
